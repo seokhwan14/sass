@@ -1,0 +1,78 @@
+body.subpage {
+  main {
+    .container {
+      display: flex;
+      // 왼쪽메뉴
+      #lnb {
+        flex: 230px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        box-sizing: border-box;
+        padding-right: 50px;
+        ul {
+          li {
+            border-bottom: 1px solid $borderColorPrimary;
+            a{
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+              line-height: 50px;
+              font-size: $fontSizeMid;
+              box-sizing: border-box;
+              transition: 0.5s;
+              &:hover {
+                padding-left: 20px;
+              }
+              &.on {
+                color: white;
+                background: $gbtnColor;
+                padding-left: 20px;
+              }
+            }
+          }
+        }
+      }
+      //sub page title 영역
+      .sub-title {
+        & + .inner {
+          .tbl-header {
+            margin-top: 50px;
+          }
+        }
+        span{
+          position: relative;
+          display: inline-block;
+          padding-bottom: 8px;
+          line-height: 43px;
+          &:after {
+            content: '';
+            position: absolute;
+            height: 3px;
+            background: $borderColorPrimary;
+            bottom: 0;
+            left: 0;
+            right: 0;
+          }
+        }
+        /*
+        실습:
+        :after, :before 사용 underline 추가하시오.
+        line-height: 43px;
+        underline 높이 3px, $borderColorPrimary
+        부모영역의 하단에 배치
+        */
+      }
+      //page content 영역
+      .inner {
+        & + .inner {
+          margin-top: 50px;
+          padding-top: 50px;
+          border-top: 1px solid $borderColorPrimary;
+        }
+        .box {
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+}
